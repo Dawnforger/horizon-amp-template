@@ -1,0 +1,48 @@
+[
+    {
+        "UpdateStageName": "Fetch install script",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/{{TemplateRepo}}/amp-install.sh",
+        "UpdateSourceArgs": "amp-install.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Fetch start script",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/{{TemplateRepo}}/amp-start.sh",
+        "UpdateSourceArgs": "amp-start.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Fetch prepare script",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/{{TemplateRepo}}/prepare-headless.sh",
+        "UpdateSourceArgs": "prepare-headless.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Set Executable Flag",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SetExecutableFlag",
+        "UpdateSourceArgs": "{{$FullBaseDir}}amp-start.sh",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Horizon + prepare game files",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "\"{{$FullBaseDir}}amp-install.sh\" \"{{$FullBaseDir}}\" \"{{HorizonTag}}\"",
+        "SkipOnFailure": false
+    }
+]

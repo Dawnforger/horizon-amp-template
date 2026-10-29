@@ -1,0 +1,93 @@
+[
+    {
+        "DisplayName": "Accept Minecraft EULA",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Required to start. https://aka.ms/MinecraftEULA",
+        "Keywords": "eula",
+        "FieldName": "HorizonEula",
+        "InputType": "checkbox",
+        "ParamFieldName": "HorizonEula",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "false",
+        "EnumValues": { "True": "true", "False": "false" }
+    },
+    {
+        "DisplayName": "World Name",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "World folder. Only used on the first start (after that, edit server/server.toml)",
+        "Keywords": "world,level",
+        "FieldName": "HorizonWorld",
+        "InputType": "text",
+        "ParamFieldName": "HorizonWorld",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "world",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Seed",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Empty for random. First start only",
+        "Keywords": "seed",
+        "FieldName": "HorizonSeed",
+        "InputType": "text",
+        "ParamFieldName": "HorizonSeed",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Whitelist",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Only whitelisted players can join (vanilla default). First start only; then use 'whitelist on|off' in the console",
+        "Keywords": "whitelist",
+        "FieldName": "HorizonWhitelist",
+        "InputType": "checkbox",
+        "ParamFieldName": "HorizonWhitelist",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "true",
+        "EnumValues": { "True": "true", "False": "false" }
+    },
+    {
+        "DisplayName": "First Operator",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Your Minecraft name: whitelisted and made operator on the first start",
+        "Keywords": "op,admin,operator",
+        "FieldName": "HorizonOp",
+        "InputType": "text",
+        "ParamFieldName": "HorizonOp",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Horizon Release",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Install:download:2",
+        "Description": "latest (current Nightly) or a tag such as v0.2.97. Applied on Update",
+        "Keywords": "version,tag,release",
+        "FieldName": "HorizonTag",
+        "InputType": "text",
+        "ParamFieldName": "HorizonTag",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "latest",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Template Repo",
+        "Category": "Horizon:stadia_controller",
+        "Subcategory": "Install:download:2",
+        "Description": "owner/repo/branch holding amp-install.sh, amp-start.sh and prepare-headless.sh",
+        "Keywords": "repo,template",
+        "FieldName": "TemplateRepo",
+        "InputType": "text",
+        "ParamFieldName": "TemplateRepo",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "REPLACE_ME/horizon-amp/main",
+        "EnumValues": {}
+    }
+]
